@@ -1,0 +1,189 @@
+
+/* general color changes */
+
+.dnd5e .items-list .item .item-name {
+     color: var(--luxury-ui-light-text);
+}
+
+:is(#tooltip, .locked-tooltip).dnd5e-tooltip {
+    color: var(--color-text-dark-primary);
+    border-radius: 5px;
+    background: var(--luxury-ui-background);
+    box-shadow: 0 0 16px var(--luxury-ui-shadow-45);
+    border: 2px solid var(--luxury-ui-primary);
+}
+
+.dnd5e.sheet .window-content {
+    overflow-y: hidden;
+    padding: 5px;
+    background: var(--luxury-ui-background);
+    color: var(--luxury-ui-light-text);
+}
+
+/* input fields */
+
+/*.dnd5e.sheet.item .details input[type="text"],*/
+/*.dnd5e.sheet.item .details input[type="number"],*/
+/*.dnd5e.sheet.item .details select,*/
+.dnd5e.sheet.item .sheet-body .item-properties .properties-list li {
+    background: var(--luxury-ui-tag-background-color);
+    border: 1px solid var(--luxury-ui-tag-border-color);
+    border-radius: 0 3px;
+    line-height: 18px;
+}
+
+.dnd5e.sheet.item .sheet-body .item-properties .properties-list li {
+    text-transform: uppercase;
+}
+
+.properties-header {
+    color: var(--luxury-ui-light-header);
+}
+
+.dnd5e .form-header {
+    margin-top: 1rem;
+}
+
+.dnd5e .form-group {
+    padding: 0.2rem 0.5rem;
+}
+
+label.checkbox > input[type="checkbox"] {
+    background: transparent;
+}
+
+form .form-group, form .form-group-stacked {
+    margin: 0;
+}
+
+.dnd5e .sheet-header input {
+    color: var(--luxury-ui-primary);
+}
+
+.dnd5e.sheet .sheet-header .summary li {
+    padding-left: 10px;
+    border-right: 0;
+    color: var(--dnd5e-color-blue-gray-3);
+}
+
+.dnd5e.sheet.item .sheet-header img.profile {
+    border: 2px solid var(--luxury-ui-primary);
+}
+
+.dnd5e.sheet .sheet-header {
+    border-bottom: 0;
+    margin-bottom: 10px;
+}
+
+.dnd5e.sheet .sheet-header .summary {
+    border-top: 0;
+}
+
+.dnd5e.sheet.item [data-tab="description"] .item-description .description-header,
+.dnd5e .form-header, .dnd5e .items-list .items-header {
+    background: var(--luxury-ui-secondary-gradient);
+    border: 0 !important;
+    border-radius: 4px 4px 0 0;
+    padding: 5px;
+    margin-bottom: 0;
+    margin-top: 1rem !important;
+}
+.dnd5e .items-header,
+.dnd5e .description-header,
+.dnd5e .form-header {
+    color: var(--luxury-ui-light-header);
+    font-family: var(--dnd5e-font-roboto-slab), serif;
+    font-size: var(--font-size-13);
+    font-weight: bold;
+}
+
+/*.dnd5e.sheet.item p {*/
+/*    background: var(--luxury-ui-paragraph-background);*/
+/*    margin: 0;*/
+/*    padding: 0.25em;*/
+/*    border-radius: 4px;*/
+/*}*/
+
+.dnd5e.sheet.item .item-properties {
+    border-right: none !important;
+}
+
+.dnd5e.sheet.item .accordion {
+    margin: 1em;
+    border-radius: 4px;
+    padding: 0;
+}
+
+.dnd5e.sheet.item .accordion :not(.collapsed) {
+    background: var(--luxury-ui-paragraph-background);
+    border-radius: 0 0 4px 4px;
+}
+
+.dnd5e.sheet.item .accordion p {
+    padding: 0.25em 0.1em;
+}
+
+.dnd5e.sheet.item .accordion > i {
+    color: var(--luxury-ui-light-text);
+}
+
+.dnd5e.sheet.item .editor {
+    padding-inline: 0;
+}
+
+/* advancements */
+
+.dnd5e .items-list .item-list {
+    background: var(--luxury-ui-paragraph-background);
+    border-radius: 0 0 4px 4px;
+}
+
+.dnd5e .items-list .item {
+    padding: 0.15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: var(--dnd5e-border-dotted);
+}
+
+.dnd5e .advancement .items-list .item .item-image {
+    display: flex;
+
+    margin: 10px;
+    padding: 10px;
+    height: 30px;
+    width: 30px;
+
+    border-radius: 3px;
+    background-size: cover;
+    background-color: var(--luxury-ui-primary);
+    border: none;
+}
+
+.dnd5e .advancement .item-name {
+    display: flex;
+}
+
+.dnd5e .advancement .item-info {
+    flex: 3;
+}
+
+.dnd5e .advancement .items-list .item-summary {
+    display: flex;
+    color: var(--luxury-ui-light-secondary-text);
+    padding: 0 0.5em 0.5em 45px;
+}
+
+.dnd5e .advancement .items-list .item-summary .tag {
+    background: var(--luxury-ui-tag-background-color);
+    border-color: var(--luxury-ui-tag-border-color);
+}
+
+/* chat */
+li.hit .title {
+    color: var(--luxury-ui-success-text-color);
+}
+
+li.miss .title {
+    color: var(--luxury-ui-fail-text-color);
+}

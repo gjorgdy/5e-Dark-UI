@@ -1,0 +1,48 @@
+/* random shit */
+.sheet.item .sheet-navigation {
+    --tab-full-width: 44px;
+    --tab-inactive-width: 34px;
+    position: absolute;
+    left: 100%;
+    top: calc(var(--luxury-ui-tabs-height) + 1rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    z-index: -1;
+}
+
+.sheet.item .sheet-navigation .item {
+    width: var(--tab-full-width);
+    height: 40px;
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 12px;
+    background: black;
+    color: var(--luxury-ui-primary);
+    --icon-fill: var(--luxury-ui-primary);
+    border: 1px solid transparent;
+    border-radius: 0 8px 8px 0;
+    font-size: var(--font-size-14);
+    margin-left: calc((var(--tab-full-width) - var(--tab-inactive-width)) * -1);
+    transition: all 250ms ease;
+}
+
+.sheet.item .sheet-navigation .item.active,
+.sheet.item .sheet-navigation .item:hover {
+    text-shadow: none;
+    margin: 0;
+    border-color: var(--luxury-ui-primary);
+    box-shadow: 0 0 6px var(--luxury-ui-primary);
+}
+
+.sheet.item .sheet-navigation .item::after {
+    content: "";
+    position: absolute;
+    inset: 4px 4px 4px 0;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid var(--luxury-ui-primary);
+    border-left: none;
+    pointer-events: none;
+}
