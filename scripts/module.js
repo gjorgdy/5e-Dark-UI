@@ -40,13 +40,12 @@ Hooks.on('renderHotbar', async function (application, html, data) {
 
     // replace bar toggle
     $('#bar-toggle').remove();
-    const barHandle = $('<a id="bar-handle" aria-label="Hide Macro Hotbar" role="button">\n' +
+    const barHandle = $('<div id="bar-space"> <a id="bar-handle" aria-label="Hide Macro Hotbar" role="button">\n' +
     '                           <i class="fas fa-caret-down"></i>\n' +
-    '                         </a>');
+    '                         </a></div>');
     const hotbar = $('#hotbar');
     hotbar.append(barHandle);
 
-    barHandle.attr('id', 'bar-handle');
     barHandle.on('click', function () {
         if (hotbar.hasClass('down')) {
             hotbar.removeClass('down');
