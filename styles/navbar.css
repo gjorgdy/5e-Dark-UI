@@ -20,8 +20,8 @@
     align-items: center;
     padding-right: 12px;
     background: black;
-    color: var(--luxury-ui-primary);
-    --icon-fill: var(--luxury-ui-primary);
+    color: var(--luxury-ui-secondary);
+    --icon-fill: var(--luxury-ui-secondary);
     border: 1px solid transparent;
     border-radius: 0 8px 8px 0;
     font-size: var(--font-size-14);
@@ -33,8 +33,8 @@
 .sheet.item .sheet-navigation .item:hover {
     text-shadow: none;
     margin: 0;
-    border-color: var(--luxury-ui-primary);
-    box-shadow: 0 0 6px var(--luxury-ui-primary);
+    border-color: var(--luxury-ui-secondary);
+    box-shadow: 0 0 6px var(--luxury-ui-secondary);
 }
 
 .sheet.item .sheet-navigation .item::after {
@@ -42,7 +42,7 @@
     position: absolute;
     inset: 4px 4px 4px 0;
     border-radius: 0 5px 5px 0;
-    border: 1px solid var(--luxury-ui-primary);
+    border: 1px solid var(--luxury-ui-secondary);
     border-left: none;
     pointer-events: none;
 }

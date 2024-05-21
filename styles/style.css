@@ -2,6 +2,9 @@
     --luxury-ui-background: var(--luxury-ui-background-color) url("/ui/denim075.png");
     --luxury-ui-tabs-height: 160px;
 
+    --luxury-ui-hotbar-height: 62px;
+    --luxury-ui-hotbar-width: 642px;
+
     --font-size-9: 0.5625rem;
     --font-size-10: 0.625rem;
     --font-size-23: 1.4375rem;

@@ -1,5 +1,13 @@
 
 /* ----------------------------------------- */
+/* Basics
+/* ----------------------------------------- */
+
+a:hover {
+    text-shadow: 0 0 8px var(--luxury-ui-primary);
+}
+
+/* ----------------------------------------- */
 /* Top left
 /* ----------------------------------------- */
 
@@ -24,6 +32,10 @@
     overflow-y: auto;
 }
 
+#navigation {
+    display: none;
+}
+
 /* ----------------------------------------- */
 /* Scrollbar
 /* ----------------------------------------- */
@@ -32,20 +44,27 @@
     width: 6px;
     height: 6px;
 }
+
 ::-webkit-scrollbar-track {
     box-shadow: 0 0 3px #000 inset;
     border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb {
     outline: none;
     border-radius: 3px;
-    background: var(--luxury-ui-primary);
+    background: var(--luxury-ui-secondary);
     border: none;
 }
+
 :root {
     scrollbar-width: thin;
-    scrollbar-color: var(--luxury-ui-primary) transparent;
+    scrollbar-color: var(--luxury-ui-secondary) transparent;
 }
+
+/* ----------------------------------------- */
+/* Links
+/* ----------------------------------------- */
 
 a.content-link,
 a.inline-roll {
@@ -54,11 +73,15 @@ a.inline-roll {
     color: var(--luxury-ui-light-secondary-text);
 }
 
+/* ----------------------------------------- */
+/* Scene controls
+/* ----------------------------------------- */
+
 #controls ol.control-tools > li.active,
 #controls ol.control-tools > li:hover {
-    color: var(--luxury-ui-primary);
-    border: 1px solid var(--luxury-ui-primary);
-    box-shadow: 0 0 6px var(--luxury-ui-primary);
+    color: var(--luxury-ui-secondary);
+    border: 1px solid var(--luxury-ui-secondary);
+    box-shadow: 0 0 6px var(--luxury-ui-secondary);
 }
 
 #controls ol.control-tools li {
@@ -69,7 +92,7 @@ a.inline-roll {
     width: 30px;
     height: 30px;
     font-size: 0.875rem;
-    color: var(--luxury-ui-primary);
+    color: var(--luxury-ui-secondary);
 
     transition: all 250ms ease;
 
@@ -83,9 +106,13 @@ a.inline-roll {
     position: absolute;
     inset: 3px;
     border-radius: 3px;
-    border: 1px solid var(--luxury-ui-primary);
+    border: 1px solid var(--luxury-ui-secondary);
     pointer-events: none;
 }
+
+/* ----------------------------------------- */
+/* Windows
+/* ----------------------------------------- */
 
 .window-app .window-content {
     display: flex;
@@ -103,10 +130,12 @@ a.inline-roll {
     background: var(--luxury-ui-background);
 }
 
-/* chat */
+/* ----------------------------------------- */
+/* Chat
+/* ----------------------------------------- */
 
 :is(.chat-popout, #chat-log) .message .message-header .title {
-    color: var(--luxury-ui-primary);
+    color: var(--luxury-ui-secondary);
 }
 
 :is(.chat-popout, #chat-log) .message .message-header .subtitle {
@@ -117,7 +146,7 @@ a.inline-roll {
     width: 35px;
     height: 35px;
     border-radius: 4px;
-    border: 1px solid var(--luxury-ui-primary);
+    border: 1px solid var(--luxury-ui-secondary);
     background: var(--dnd5e-color-light-gray);
 }
 
@@ -128,6 +157,7 @@ a.inline-roll {
     border: 1px solid var(--luxury-ui-tag-border-color);
     background: none;
 }
+
 .dnd5e2.chat-card .description,
 .dnd5e2 .pills .pill.pill-sm {
     background: var(--luxury-ui-tag-background-color);
@@ -195,11 +225,10 @@ a.inline-roll {
     background: var(--luxury-ui-tag-background-color);
 }
 
-.window-header {
-    color: var(--luxury-ui-primary);
-}
+/* ----------------------------------------- */
+/* Text inputs
+/* ----------------------------------------- */
 
-/* Text Input */
 input[type="text"],
 input[type="number"],
 input[type="password"],
@@ -209,13 +238,14 @@ input[type="search"] {
     color: var(--luxury-ui-light-text);
     border: 1px solid var(--luxury-ui-input-border-color);
 }
+
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="password"]:focus,
 input[type="date"]:focus,
 input[type="time"]:focus,
 input[type="search"]:focus {
-    box-shadow: 0 0 5px var(--luxury-ui-secondary);
+    box-shadow: 0 0 5px var(--luxury-ui-primary);
 }
 
 /* ----------------------------------------- */
@@ -232,6 +262,7 @@ button, input, select {
 #module-management .package-list .package-title .title-group .subtitle {
     color: var(--luxury-ui-light-text);
 }
+
 #module-management .package-list .package-title,
 #module-management .package-list .package-metadata,
 #module-management .package-list .package-description {
@@ -241,4 +272,243 @@ button, input, select {
 form .notes,
 form .hint {
     color: var(--luxury-ui-light-secondary-text);
+}
+
+/* ----------------------------------------- */
+/* Resize handle
+/* ----------------------------------------- */
+
+.window-app .window-resizable-handle > i::before {
+    content: "\f7a5";
+}
+
+.window-app .window-resizable-handle {
+    width: 20px;
+    height: 20px;
+    padding-left: 10px;
+    border: none;
+    color: var(--luxury-ui-button-border-color);
+    background: transparent;
+    border-radius: 0;
+    overflow: hidden;
+    font-size: 16px;
+    opacity: 0.4;
+}
+
+.window-app .window-resizable-handle > i {
+    position: absolute;
+    bottom: -3px;
+    right: 1px;
+}
+
+.window-app .window-resizable-handle i.fas {
+    transform: rotate(45deg);
+}
+
+/* ----------------------------------------- */
+/* Window Header
+/* ----------------------------------------- */
+
+.sheet.window-app .window-header {
+    color: var(--luxury-ui-secondary);
+    background: var(--luxury-ui-background);
+    border-radius: 5px 5px 0 0;
+    padding: 8px 8px 16px 8px;
+    border: none;
+    height: fit-content;
+    line-height: 0;
+    /*transform: translate(0, 100%);*/
+}
+
+.dnd5e.sheet .window-content,
+.sheet.window-content {
+    border-radius: 0 0 5px 5px;
+    overflow-y: hidden;
+    padding: 0 16px 16px 16px;
+    background: var(--luxury-ui-background);
+    color: var(--luxury-ui-light-text);
+}
+
+.sheet.window-app .window-header a {
+    content: "";
+}
+
+/* ----------------------------------------- */
+/* Hotbar
+/* ----------------------------------------- */
+
+#hotbar {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: var(--luxury-ui-hotbar-width);
+    height: var(--luxury-ui-hotbar-height);
+    transform: none;
+    transition: transform 0.5s ease-in-out;
+}
+
+#hotbar.locked #macro-list {
+    border: 1px solid var(--luxury-ui-secondary-shade);
+    padding: 5px;
+}
+
+#action-bar:not(.collapsed) {
+    border-radius: 12px;
+    margin-bottom: 10px;
+    transition: transform;
+    transition-duration: 0.5s;
+}
+
+a#bar-handle {
+    text-align: center;
+    position: absolute;
+    bottom: calc(var(--luxury-ui-hotbar-height) + 10px);
+    left: calc(50% - 10px);
+    padding: 2px 6px;
+    height: fit-content;
+    width: fit-content;
+    color: var(--luxury-ui-secondary);
+    pointer-events: all;
+}
+
+#bar-handle > i {
+    transform: none;
+    transition: transform 0.5s ease-in-out;
+}
+
+#hotbar.down {
+    transform: translateY(calc(var(--luxury-ui-hotbar-height) + 10px));
+}
+
+#hotbar.down > #bar-handle > i {
+    transform: rotate(180deg);
+}
+
+#hotbar #macro-list {
+    border: none;
+    grid-gap: 6px;
+    padding: 6px;
+}
+
+#hotbar .macro.inactive,
+#hotbar .macro {
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    background: none;
+    box-shadow: none;
+    border: 1px solid var(--luxury-ui-secondary-shade);
+}
+
+#hotbar .macro .macro-key {
+    position: absolute;
+    top: revert;
+    bottom: -2px;
+    right: 2px;
+    padding: 1px;
+    background: none;
+    text-shadow: -1px 1px 3px black;
+    color: var(--luxury-ui-secondary);
+    font-weight: bold;
+    pointer-events: none;
+}
+
+#hotbar .macro img {
+    padding: 1px;
+    width: 95%;
+    height: 95%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#hotbar .macro:hover,
+#hotbar .macro.inactive:hover,
+#hotbar .macro.active:hover {
+    box-shadow: 0 0 6px var(--luxury-ui-secondary);
+    border: 1px solid var(--luxury-ui-secondary-shade);
+}
+
+#hotbar .bar-controls {
+    flex: 0 0 32px;
+    padding: 6px;
+    text-align: center;
+    color: var(--luxury-ui-secondary);
+    border: none;
+    box-shadow: none;
+}
+
+a#bar-handle,
+#hotbar #macro-list,
+#hotbar .bar-controls {
+    background: var(--luxury-ui-hotbar-background-color);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+}
+
+#hotbar #hotbar-directory-controls a {
+    line-height: 25px;
+}
+
+#hotbar .bar-controls a.page-control {
+    font-size: revert;
+    line-height: 1;
+    flex: none;
+}
+
+/* ----------------------------------------- */
+/* Players
+/* ----------------------------------------- */
+
+#players:hover {
+    width: var(--players-width);
+}
+
+#players:after {
+    width: 25px;
+    box-shadow: 0 0 6px #6e0000;
+}
+
+#players {
+    overflow: hidden;
+    bottom: 5px;
+    position: absolute;
+    width: 25px;
+    margin: 0 5px 10px 15px;
+    padding: 0;
+    border: 0;
+    border-radius: 5px;
+    background: var(--luxury-ui-hotbar-background-color);
+    pointer-events: all;
+    backdrop-filter: blur(5px);
+
+    transition: width 0.5s ease-in-out;
+}
+#players .player {
+    flex-wrap: nowrap;
+}
+#players h3 {
+    display: flex;
+    font-size: var(--font-size-14);
+    font-weight: bold;
+    color: var(--luxury-ui-secondary);
+    margin: 0;
+    padding: 6px 0 0 0;
+    border-bottom: none;
+}
+#players h3 i {
+    flex-wrap: nowrap;
+    font-size: var(--font-size-12);
+    margin: 3px;
+    padding: 0 2px 2px 2px;
+}
+#players ol li.player {
+    line-height: 20px;
+    padding: 1px 6px;
+}
+#players ol .player-active {
+    flex: 0 0 8px;
+    height: 8px;
+    border: 1px solid var(--color-border-dark);
+    border-radius: 50%;
+    margin: 5px 10px 3px 3px;
 }

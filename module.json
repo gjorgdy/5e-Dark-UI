@@ -32,7 +32,8 @@
     "styles/colors/default.css",
     "styles/navbar.css",
     "styles/dnd5e.css",
-    "styles/foundry.css"
+    "styles/foundry.css",
+    "styles/argon.css"
   ],
   "languages": [
     {

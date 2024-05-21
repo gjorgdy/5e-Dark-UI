@@ -1,7 +1,14 @@
 :root {
-    --luxury-ui-primary: #9f9275;
-    --luxury-ui-secondary: #491d25;
-    --luxury-ui-secondary-gradient: linear-gradient(to right, #491d25, #311b1f);
+    --luxury-ui-primary: #491d25;
+    --luxury-ui-primary-shade: #311b1f;
+    --luxury-ui-primary-gradient: linear-gradient(
+            to right,
+            var(--luxury-ui-primary),
+            var(--luxury-ui-primary-shade)
+    );
+    --luxury-ui-secondary: #9f9275;
+    --luxury-ui-secondary-shade: #6b624f;
+
     --luxury-ui-paragraph-background: #252830;
 
     --luxury-ui-light-header: #999;
@@ -9,12 +16,16 @@
     --luxury-ui-light-secondary-text: #a3a6ae;
     --luxury-ui-locked-text: #6e6e73;
 
+    --luxury-ui-hotbar-background-color: rgba(0, 0, 0, 0.65);
+
     --luxury-ui-tag-background-color: rgba(37, 40, 48, 0.5);
     --luxury-ui-tag-border-color: #434857;
 
     --luxury-ui-dnd-button-background-color: rgba(74, 57, 57, 0.75);
     --luxury-ui-dnd-button-border-color: #816464;
     --luxury-ui-dnd-button-text-color: #cd9f9f;
+
+    --luxury-ui-window-resize-handle: #cfd2da;
 
     --luxury-ui-button-background-color: rgba(57, 57, 57, 0.75);
     --luxury-ui-button-border-color: #646464;
@@ -30,4 +41,6 @@
     --luxury-ui-shadow-45: rgba(0, 0, 0, 0.45);
     --luxury-ui-shadow-15: rgba(0, 0, 0, 0.15);
     --luxury-ui-highlight-45: rgba(255, 255, 255, 0.45);
+
+    --luxury-ui-filter: hue-rotate(0deg);
 }
