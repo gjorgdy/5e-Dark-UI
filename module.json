@@ -3,24 +3,19 @@
   "title": "5e Dark UI",
   "description": "Make Foundry look like the revised Dark character sheet theme of DND 5e",
   "version": "#{VERSION}#",
-  "library": "false",
-  "manifestPlusVersion": "1.2.0",
   "compatibility": {
-    "minimum": 10,
-    "verified": 11,
-    "maximum": 11
+    "minimum": "11",
+    "verified": "12",
+    "maximum": "12"
   },
   "authors": [
     {
       "name": "Gjorgdy",
       "url": "https://github.com/gjorgdy",
-      "discord": "gjorgdy"
+      "discord": "gjorgdy",
+      "flags": {}
     }
   ],
-  "relationships": {
-    "systems": [],
-    "requires": []
-  },
   "esmodules": [
     "scripts/module.js"
   ],
@@ -39,7 +34,8 @@
     {
       "lang": "en",
       "name": "English",
-      "path": "languages/en.json"
+      "path": "languages/en.json",
+      "flags": {}
     }
   ],
   "url": "#{URL}#",
@@ -50,7 +46,9 @@
   "media": [
     {
       "type": "icon",
-      "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4"
+      "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4",
+      "loop": false,
+      "flags": {}
     }
   ]
 }

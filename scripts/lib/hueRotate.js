@@ -35,7 +35,7 @@ function hexToHSL(hex) {
 export function filter(targetHex, initialHex) {
     const targetHSL = hexToHSL(targetHex);
     const initialHSL = hexToHSL(initialHex);
-    let saturation = targetHSL[1] / 3.65;
+    let saturation = targetHSL[1] * 100;
     let hueDiff = targetHSL[0] - initialHSL[0];
     // Ensure hue difference is within the range [0, 360)
     hueDiff = (hueDiff + 360) % 360;

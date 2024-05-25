@@ -12,7 +12,7 @@
 }
 
 .sheet.item .sheet-navigation .item {
-    width: var(--tab-full-width);
+    width: 44px;
     height: 40px;
     position: relative;
     display: flex;
@@ -25,14 +25,14 @@
     border: 1px solid transparent;
     border-radius: 0 8px 8px 0;
     font-size: var(--font-size-14);
-    margin-left: calc((var(--tab-full-width) - var(--tab-inactive-width)) * -1);
+    margin-left: -18px;
     transition: all 250ms ease;
 }
 
 .sheet.item .sheet-navigation .item.active,
 .sheet.item .sheet-navigation .item:hover {
     text-shadow: none;
-    margin: 0;
+    margin-left: -2px;
     border-color: var(--luxury-ui-secondary);
     box-shadow: 0 0 6px var(--luxury-ui-secondary);
 }

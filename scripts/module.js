@@ -1,28 +1,31 @@
-import {LuxuryUiLayer} from "./lib/luxuryUiLayer.js";
 import {filter} from "./lib/hueRotate.js";
+
+const originalColor = '#7c2c2f';
+const primaryColor = '#5e288c';
+const secondaryColor = '#b5afbd';
 
 Hooks.once('init', async function () {
     CONFIG.debug.hooks = true;
-});
-
-const originalColor = '#7c2c2f';
-const primaryColor = '#c434f1';
-
-Hooks.once('ready', async function () {
     // overwrite dnd5e values
     $(':root')
         .css('--dnd5e-color-gold', 'var(--luxury-ui-secondary)')
         .css('--dnd5e-color-hd-1', 'var(--luxury-ui-primary)')
         .css('--dnd5e-color-hd-2', 'var(--luxury-ui-primary-shade)')
         .css('--dnd5e-color-hd-3', 'var(--luxury-ui-primary)')
-        // .css('--luxury-ui-primary', primaryColor)
-        // .css('--luxury-ui-primary-shade', '#57188c')
-        // .css('--luxury-ui-secondary', '#b2b3b9')
-        // .css('--luxury-ui-filter', filter(primaryColor, originalColor))
+        .css('--luxury-ui-primary', primaryColor)
+        .css('--luxury-ui-primary-shade', '#57188c')
+        .css('--luxury-ui-secondary', secondaryColor)
+        .css('--luxury-ui-filter', filter(primaryColor, originalColor))
+});
+
+Hooks.once('ready', async function () {
+
 });
 
 Hooks.on('renderPause', async function (application, html, data) {
-
+    const pause =  $('#pause');
+    const middleUI = $('#ui-middle')
+    middleUI.append(pause);
 });
 
 Hooks.on('renderHotbar', async function (application, html, data) {
@@ -76,13 +79,10 @@ Hooks.on('renderItemSheet5e', async function (application, html, data) {
 
     // create observer instance
     const observer = new MutationObserver(function (mutationsList, observer) {
-        console.log("I observe something");
         for (const mutation of mutationsList) {
             if (mutation.type === 'childList') {
                 for (const node of mutation.addedNodes) {
                     if (node.nodeType === Node.ELEMENT_NODE && node.getAttribute('data-tab') === 'midiqol') {
-                        // A div has been added
-                        console.log("I observe d thing");
                         $(node).html('<i class="fas fa-notes-medical"></i>');
                         // Optionally, you can disconnect the observer if you only need it once
                         observer.disconnect();

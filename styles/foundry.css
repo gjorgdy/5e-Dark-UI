@@ -381,6 +381,7 @@ a#bar-handle {
     height: fit-content;
     width: 20px;
     color: var(--luxury-ui-secondary);
+    border: 1px solid var(--luxury-ui-secondary-shade);
     box-shadow: 0 0 10px var(--color-shadow-dark);
 }
 
@@ -398,10 +399,9 @@ a#bar-handle {
 }
 
 #hotbar #macro-list {
-    border: none;
+    box-shadow: 0 0 10px var(--color-shadow-dark);
     grid-gap: 6px;
     padding: 6px;
-    box-shadow: 0 0 10px var(--color-shadow-dark);
 }
 
 #hotbar .macro.inactive,
@@ -411,7 +411,7 @@ a#bar-handle {
     border-radius: 5px;
     background: none;
     box-shadow: none;
-    border: 1px solid var(--luxury-ui-secondary-shade);
+    border: 1px solid var(--luxury-ui-secondary);
 }
 
 #hotbar .macro .macro-key {
@@ -439,7 +439,7 @@ a#bar-handle {
 #hotbar .macro.inactive:hover,
 #hotbar .macro.active:hover {
     box-shadow: 0 0 6px var(--luxury-ui-secondary);
-    border: 1px solid var(--luxury-ui-secondary-shade);
+    border: 1px solid var(--luxury-ui-secondary);
 }
 
 #hotbar .bar-controls {
@@ -455,7 +455,8 @@ a#bar-handle,
 #hotbar #macro-list,
 #hotbar .bar-controls {
     background: var(--luxury-ui-hud-background-color);
-    backdrop-filter: blur(5px);
+    backdrop-filter: var(--luxury-ui-hud-backdrop-filter);
+    border: 1px solid var(--luxury-ui-secondary-shade);
     border-radius: 5px;
 }
 
@@ -489,7 +490,7 @@ a#bar-handle,
     width: 25px;
     margin: 0 5px 10px 15px;
     padding: 0;
-    border: 0;
+    border: 1px solid var(--luxury-ui-secondary-shade);
     border-radius: 5px;
     background: var(--luxury-ui-hud-background-color);
     pointer-events: all;
@@ -516,8 +517,9 @@ a#bar-handle,
     padding: 0;
 }
 #players ol li.player {
+    position: relative;
     line-height: 20px;
-    padding: 1px 6px;
+    padding: 0 5px;
 }
 #players ol .player-active {
     flex: 0 0 8px;
@@ -536,14 +538,13 @@ a#bar-handle,
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    width: var(--sidebar-width);
     height: calc(100% - 20px);
     overflow: hidden;
     margin: 10px;
     padding: 0;
-    border: none;
+    border: var(--luxury-ui-hud-border);
     background: var(--luxury-ui-hud-background-color);
-    backdrop-filter: blur(5px);
+    backdrop-filter: var(--luxury-ui-hud-backdrop-filter);
 }
 
 #sidebar-tabs {
@@ -575,4 +576,16 @@ a#bar-handle,
     border: none;
     box-shadow: none;
     text-shadow: none;
+}
+
+/* ----------------------------------------- */
+/* Pause icon
+/* ----------------------------------------- */
+
+#pause {
+    position: absolute;
+}
+
+#pause img {
+    filter: var(--luxury-ui-filter);
 }
