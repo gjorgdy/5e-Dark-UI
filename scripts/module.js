@@ -12,10 +12,10 @@ Hooks.once('init', async function () {
         .css('--dnd5e-color-hd-1', 'var(--luxury-ui-primary)')
         .css('--dnd5e-color-hd-2', 'var(--luxury-ui-primary-shade)')
         .css('--dnd5e-color-hd-3', 'var(--luxury-ui-primary)')
-        .css('--luxury-ui-primary', primaryColor)
-        .css('--luxury-ui-primary-shade', '#57188c')
-        .css('--luxury-ui-secondary', secondaryColor)
-        .css('--luxury-ui-filter', filter(primaryColor, originalColor))
+        // .css('--luxury-ui-primary', primaryColor)
+        // .css('--luxury-ui-primary-shade', '#57188c')
+        // .css('--luxury-ui-secondary', secondaryColor)
+        // .css('--luxury-ui-filter', filter(primaryColor, originalColor))
 });
 
 Hooks.once('ready', async function () {

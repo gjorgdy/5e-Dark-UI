@@ -4,8 +4,8 @@
 
     --luxury-ui-object-border: 1px solid var(--luxury-ui-secondary);
     --luxury-ui-hud-border: 1px solid var(--luxury-ui-secondary-shade);
+    --luxury-ui-hud-border-radius: 5px;
 
-    --luxury-ui-hud-background: 1px solid var(--luxury-ui-secondary-shade);
     --luxury-ui-hud-backdrop-filter: blur(5px);
 
     --luxury-ui-hotbar-height: 62px;

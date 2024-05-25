@@ -77,37 +77,60 @@ a.inline-roll {
 /* Scene controls
 /* ----------------------------------------- */
 
+#controls {
+    padding: 10px;
+}
+
+#controls ol.control-tools.main-controls {
+    margin-right: 5px;
+}
+
+#controls ol.control-tools {
+    background: var(--luxury-ui-hud-background-color);
+    backdrop-filter: var(--luxury-ui-hud-backdrop-filter);
+    border: var(--luxury-ui-hud-border);
+    border-radius: var(--luxury-ui-hud-border-radius);
+    height: fit-content;
+}
+
+#controls ol.control-tools > li {
+    font-size: 14px;
+    background: none;
+    color: var(--luxury-ui-secondary);
+    border: none;
+    box-shadow: none;
+    width: 30px;
+    height: 34px;
+    margin: 0;
+    line-height: 32px;
+}
+
 #controls ol.control-tools > li.active,
 #controls ol.control-tools > li:hover {
     color: var(--luxury-ui-secondary);
-    border: 1px solid var(--luxury-ui-secondary);
-    box-shadow: 0 0 6px var(--luxury-ui-secondary);
+    text-shadow: 0 0 6px var(--luxury-ui-selected);
+    border: none;
+    box-shadow: none;
 }
 
-#controls ol.control-tools li {
-    display: flex;
-    position: relative;
-    background-color: #000;
+#controls ol.control-tools.sub-controls > li {
+     margin: 0;
+}
 
-    width: 30px;
-    height: 30px;
-    font-size: 0.875rem;
+#controls ol.control-tools > li.toggle {
+    background: none;
+    border: none;
+}
+#controls ol.control-tools > li.toggle.active,
+#controls ol.control-tools > li.toggle:hover {
+    background: none;
+    border: none;
     color: var(--luxury-ui-secondary);
-
-    transition: all 250ms ease;
-
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+    text-shadow: 0 0 10px var(--luxury-ui-selected);
 }
-
-#controls ol.control-tools > li::after {
-    content: "";
-    position: absolute;
-    inset: 3px;
-    border-radius: 3px;
-    border: 1px solid var(--luxury-ui-secondary);
-    pointer-events: none;
+#controls ol.control-tools .has-notes::after {
+    color: var(--luxury-ui-primary);
+    opacity: 1;
 }
 
 /* ----------------------------------------- */
@@ -485,10 +508,10 @@ a#bar-handle,
 
 #players {
     overflow: hidden;
-    bottom: 5px;
+    bottom: 0;
     position: absolute;
     width: 25px;
-    margin: 0 5px 10px 15px;
+    margin: 10px;
     padding: 0;
     border: 1px solid var(--luxury-ui-secondary-shade);
     border-radius: 5px;
