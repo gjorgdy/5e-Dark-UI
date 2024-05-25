@@ -2,7 +2,10 @@ import {filter} from "./lib/hueRotate.js";
 
 const originalColor = '#7c2c2f';
 const primaryColor = '#5e288c';
-const secondaryColor = '#b5afbd';
+const primaryColorShade = '#361750';
+const secondaryColor = '#c7c4cc';
+const secondaryColorShade = '#444345';
+const selectColor = '#7938ae';
 
 Hooks.once('init', async function () {
     CONFIG.debug.hooks = true;
@@ -12,14 +15,12 @@ Hooks.once('init', async function () {
         .css('--dnd5e-color-hd-1', 'var(--luxury-ui-primary)')
         .css('--dnd5e-color-hd-2', 'var(--luxury-ui-primary-shade)')
         .css('--dnd5e-color-hd-3', 'var(--luxury-ui-primary)')
-        // .css('--luxury-ui-primary', primaryColor)
-        // .css('--luxury-ui-primary-shade', '#57188c')
-        // .css('--luxury-ui-secondary', secondaryColor)
-        // .css('--luxury-ui-filter', filter(primaryColor, originalColor))
-});
-
-Hooks.once('ready', async function () {
-
+        .css('--luxury-ui-primary', primaryColor)
+        .css('--luxury-ui-primary-shade', primaryColorShade)
+        .css('--luxury-ui-secondary', secondaryColor)
+        .css('--luxury-ui-secondary-shade', secondaryColorShade)
+        .css('--luxury-ui-selected-color', selectColor)
+        .css('--luxury-ui-filter', filter(primaryColor, originalColor))
 });
 
 Hooks.on('renderPause', async function (application, html, data) {

@@ -9,7 +9,8 @@
     --luxury-ui-secondary: #9f9275;
     --luxury-ui-secondary-shade: #433e32;
 
-    --luxury-ui-selected: #ff0000;
+    --luxury-ui-selected-color: #ff0000;
+    --luxury-ui-selected-shadow: 0 0 8px var(--luxury-ui-selected-color);
 
     --luxury-ui-paragraph-background: #252830;
 
@@ -18,7 +19,10 @@
     --luxury-ui-light-secondary-text: #a3a6ae;
     --luxury-ui-locked-text: #6e6e73;
 
-    --luxury-ui-hud-background-color: rgba(0, 0, 0, 0.45);
+    --luxury-ui-background-transparency: 0.45;
+
+    --luxury-ui-hud-background-color: rgba(0, 0, 0, var(--luxury-ui-background-transparency));
+    --luxury-ui-hud-shadow: 0 0 6px var(--luxury-ui-shadow-45);
 
     --luxury-ui-tag-background-color: rgba(37, 40, 48, 0.5);
     --luxury-ui-tag-border-color: #434857;

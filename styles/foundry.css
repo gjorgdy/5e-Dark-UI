@@ -4,7 +4,7 @@
 /* ----------------------------------------- */
 
 a:hover {
-    text-shadow: 0 0 8px var(--luxury-ui-primary);
+    text-shadow: var(--luxury-ui-selected-shadow);
 }
 
 /* ----------------------------------------- */
@@ -90,6 +90,7 @@ a.inline-roll {
     backdrop-filter: var(--luxury-ui-hud-backdrop-filter);
     border: var(--luxury-ui-hud-border);
     border-radius: var(--luxury-ui-hud-border-radius);
+    box-shadow: var(--luxury-ui-hud-shadow);
     height: fit-content;
 }
 
@@ -107,8 +108,8 @@ a.inline-roll {
 
 #controls ol.control-tools > li.active,
 #controls ol.control-tools > li:hover {
-    color: var(--luxury-ui-secondary);
-    text-shadow: 0 0 6px var(--luxury-ui-selected);
+    color: var(--luxury-ui-selected-color);
+    text-shadow: 0 0 6px var(--luxury-ui-selected-color);
     border: none;
     box-shadow: none;
 }
@@ -125,8 +126,9 @@ a.inline-roll {
 #controls ol.control-tools > li.toggle:hover {
     background: none;
     border: none;
-    color: var(--luxury-ui-secondary);
-    text-shadow: 0 0 10px var(--luxury-ui-selected);
+    box-shadow: none;
+    color: var(--luxury-ui-selected-color);
+    text-shadow: 0 0 10px var(--luxury-ui-selected-color);
 }
 #controls ol.control-tools .has-notes::after {
     color: var(--luxury-ui-primary);
@@ -170,7 +172,7 @@ a.inline-roll {
     height: 35px;
     border-radius: 4px;
     border: 1px solid var(--luxury-ui-secondary);
-    background: var(--dnd5e-color-light-gray);
+    background: none;
 }
 
 .chat-message {
@@ -405,7 +407,7 @@ a#bar-handle {
     width: 20px;
     color: var(--luxury-ui-secondary);
     border: 1px solid var(--luxury-ui-secondary-shade);
-    box-shadow: 0 0 10px var(--color-shadow-dark);
+    box-shadow: var(--luxury-ui-hud-shadow);
 }
 
 #bar-handle > i {
@@ -422,7 +424,7 @@ a#bar-handle {
 }
 
 #hotbar #macro-list {
-    box-shadow: 0 0 10px var(--color-shadow-dark);
+    box-shadow: var(--luxury-ui-hud-shadow);
     grid-gap: 6px;
     padding: 6px;
 }
@@ -471,7 +473,7 @@ a#bar-handle {
     text-align: center;
     color: var(--luxury-ui-secondary);
     border: none;
-    box-shadow: 0 0 10px var(--color-shadow-dark);
+    box-shadow: var(--luxury-ui-hud-shadow);
 }
 
 a#bar-handle,
@@ -568,6 +570,7 @@ a#bar-handle,
     border: var(--luxury-ui-hud-border);
     background: var(--luxury-ui-hud-background-color);
     backdrop-filter: var(--luxury-ui-hud-backdrop-filter);
+    box-shadow: var(--luxury-ui-hud-shadow);
 }
 
 #sidebar-tabs {
@@ -575,7 +578,7 @@ a#bar-handle,
     --sidebar-tab-width: 24px;
     flex: 0 0 var(--sidebar-tab-height);
     box-sizing: border-box;
-    margin: 0 0 5px;
+    margin: 0 5px;
     border-bottom: none;
     box-shadow: none;
 }
@@ -585,13 +588,14 @@ a#bar-handle,
 }
 
 #sidebar-tabs > .item.active {
-    color: var(--luxury-ui-secondary);
     border: none;
     box-shadow: none;
+    color: var(--luxury-ui-selected-color);
+    text-shadow: 0 0 6px inset var(--luxury-ui-selected-color);
 }
 
 #sidebar-tabs > .item.active:after {
-     box-shadow: 0 0 6px inset var(--luxury-ui-primary);
+     box-shadow: 0 0 6px inset var(--luxury-ui-selected-color);
  }
 
 #sidebar.collapsed #sidebar-tabs > .item.active {
@@ -611,4 +615,25 @@ a#bar-handle,
 
 #pause img {
     filter: var(--luxury-ui-filter);
+}
+
+/* ----------------------------------------- */
+/* Token HUD
+/* ----------------------------------------- */
+
+#token-hud .status-effects,
+.placeable-hud .control-icon {
+    border: var(--luxury-ui-hud-border);
+    background: var(--luxury-ui-hud-background-color);
+    backdrop-filter: var(--luxury-ui-hud-backdrop-filter);
+    border-radius: var(--luxury-ui-hud-border-radius);
+    box-shadow: var(--luxury-ui-hud-shadow);
+}
+
+#token-hud .status-effects .effect-control.active:not(.overlay) {
+    border: 1px solid var(--luxury-ui-selected-color);
+}
+
+.placeable-hud .control-icon.active {
+    border: 1px solid var(--luxury-ui-selected-color);
 }
