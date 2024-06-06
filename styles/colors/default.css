@@ -24,8 +24,9 @@
     --luxury-ui-hud-background-color: rgba(0, 0, 0, var(--luxury-ui-background-transparency));
     --luxury-ui-hud-shadow: 0 0 6px var(--luxury-ui-shadow-45);
 
-    --luxury-ui-tag-background-color: rgba(37, 40, 48, 0.5);
+    --luxury-ui-tag-background-color: rgba(37, 40, 48);
     --luxury-ui-tag-border-color: #434857;
+    --luxury-ui-tag-border: 1px solid var(--luxury-ui-tag-border-color);
 
     --luxury-ui-dnd-button-background-color: rgba(74, 57, 57, 0.75);
     --luxury-ui-dnd-button-border-color: #816464;

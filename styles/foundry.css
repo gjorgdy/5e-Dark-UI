@@ -3,8 +3,15 @@
 /* Basics
 /* ----------------------------------------- */
 
-a:hover {
+input:hover,
+input:focus,
+a:hover,
+a:focus {
     text-shadow: var(--luxury-ui-selected-shadow);
+}
+
+select:focus {
+    box-shadow: var(--luxury-ui-selected-shadow);
 }
 
 /* ----------------------------------------- */
@@ -26,13 +33,34 @@ a:hover {
 }
 
 #ui-top #navigation #scene-list {
-    /*position: absolute;*/
-    max-width: 200px;
-    max-height: 300px;
-    overflow-y: auto;
+    max-width: fit-content;
 }
 
-#navigation {
+#ui-top #navigation {
+    height: 100%;
+    margin-left: auto;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+#ui-top #navigation.hide:not(:hover) {
+    opacity: 0;
+}
+
+#navigation #scene-list .scene.gm {
+    backdrop-filter: var(--luxury-ui-hud-backdrop-filter);
+    background: var(--luxury-ui-hud-background-color);
+    border: var(--luxury-ui-hud-border);
+}
+
+#navigation #scene-list .scene.view,
+#navigation #scene-list .scene.context {
+    box-shadow: var(--luxury-ui-selected-shadow);
+    text-shadow: var(--luxury-ui-selected-shadow);
+}
+
+#navigation #nav-toggle {
     display: none;
 }
 
@@ -57,7 +85,7 @@ a:hover {
     border: none;
 }
 
-:root {
+* {
     scrollbar-width: thin;
     scrollbar-color: var(--luxury-ui-secondary) transparent;
 }
@@ -104,6 +132,13 @@ a.inline-roll {
     height: 34px;
     margin: 0;
     line-height: 32px;
+}
+
+#controls ol.control-tools > li.selected {
+    color: var(--luxury-ui-primary-shade);
+    text-shadow: 0 0 6px var(--luxury-ui-primary-shade);
+    border: none;
+    box-shadow: none;
 }
 
 #controls ol.control-tools > li.active,
@@ -617,6 +652,10 @@ a#bar-handle,
     filter: var(--luxury-ui-filter);
 }
 
+.dnd5e2#pause img {
+    opacity: 1;
+}
+
 /* ----------------------------------------- */
 /* Token HUD
 /* ----------------------------------------- */
@@ -636,4 +675,18 @@ a#bar-handle,
 
 .placeable-hud .control-icon.active {
     border: 1px solid var(--luxury-ui-selected-color);
+}
+
+/* ----------------------------------------- */
+/* Text Area
+/* ----------------------------------------- */
+
+textarea {
+    color: var(--luxury-ui-light-text);
+    background: var(--luxury-ui-tag-background-color);
+    border: var(--luxury-ui-tag-border);
+}
+textarea:focus {
+    border: 1px var(--luxury-ui-selected-color);
+    box-shadow: var(--luxury-ui-selected-shadow);
 }

@@ -5,19 +5,18 @@
      color: var(--luxury-ui-light-text);
 }
 
-:is(#tooltip, .locked-tooltip).dnd5e-tooltip {
-    color: var(--color-text-dark-primary);
-    border-radius: 5px;
-    background: var(--luxury-ui-background);
-    box-shadow: 0 0 16px var(--luxury-ui-shadow-45);
-    border: 2px solid var(--luxury-ui-secondary);
+.dnd5e input[type="text"]:hover,
+.dnd5e input[type="number"]:hover,
+.dnd5e input[type="checkbox"]:hover,
+.dnd5e input[type="text"]:focus,
+.dnd5e input[type="number"]:focus,
+.dnd5e input[type="checkbox"]:focus {
+    border: 1px solid var(--luxury-ui-selected-color);
+    box-shadow: var(--luxury-ui-selected-shadow);
 }
 
 /* input fields */
 
-/*.dnd5e.sheet.item .details input[type="text"],*/
-/*.dnd5e.sheet.item .details input[type="number"],*/
-/*.dnd5e.sheet.item .details select,*/
 .dnd5e.sheet.item .sheet-body .item-properties .properties-list li {
     background: var(--luxury-ui-tag-background-color);
     border: 1px solid var(--luxury-ui-tag-border-color);
@@ -37,8 +36,15 @@
     margin-top: 1rem;
 }
 
+.midi-qol-box,
+.dnd5e.sheet.item h4.damage-header,
+.dnd5e.sheet.item .damage-parts,
 .dnd5e .form-group {
-    padding: 0.2rem 0.5rem;
+    padding: 0.2rem 0.5rem !important;
+}
+
+.midi-qol-box {
+    border: none !important;
 }
 
 label.checkbox > input[type="checkbox"] {
@@ -49,9 +55,33 @@ form .form-group, form .form-group-stacked {
     margin: 0;
 }
 
+.dnd5e input[type="text"],
+.dnd5e input[type="number"],
+.dnd5e select {
+    color: var(--luxury-ui-light-text);
+}
+
 /* ----------------------------------------- */
 /* Sheet Header
 /* ----------------------------------------- */
+
+.dnd5e.sheet.window-app .window-header {
+    position: absolute;
+    background: transparent;
+    padding: 16px;
+    width: 100%;
+}
+
+.dnd5e.sheet.window-app .window-content {
+    border-radius: 5px;
+    overflow-y: hidden;
+    padding: 16px;
+}
+
+.item-properties .identified input[type="checkbox"],
+.item-properties .equipped input[type="checkbox"] {
+    display: none;
+}
 
 .dnd5e .sheet-header input {
     color: var(--luxury-ui-secondary);
@@ -108,7 +138,7 @@ form .form-group, form .form-group-stacked {
     padding: 0;
 }
 
-.dnd5e.sheet.item .accordion :not(.collapsed) {
+.dnd5e.sheet.item .accordion:not(.collapsed) .accordion-content {
     background: var(--luxury-ui-paragraph-background);
     border-radius: 0 0 4px 4px;
 }
@@ -130,7 +160,105 @@ form .form-group, form .form-group-stacked {
     overflow: hidden auto;
 }
 
-/* advancements */
+.dnd5e.sheet.item input[type="checkbox"] {
+    appearance: none;
+}
+
+.dnd5e.sheet.item input[type="checkbox"]:checked {
+    background: var(--luxury-ui-selected-color);
+}
+
+.dnd5e.sheet.item .sheet-body .item-properties .properties-header,
+.dnd5e.sheet.item h4.damage-header,
+.dnd5e.sheet.item input[type="text"],
+.dnd5e.sheet.item input[type="number"],
+.dnd5e .form-group label,
+.dnd5e select {
+    color: var(--luxury-ui-light-text);
+}
+
+.dnd5e.sheet.item .midi-qol-tab input[type="text"],
+.dnd5e.sheet.item .midi-qol-tab input[type="number"],
+.dnd5e.sheet.item .midi-qol-tab select,
+.dnd5e.sheet.item .details input[type="text"],
+.dnd5e.sheet.item .details input[type="number"],
+.dnd5e.sheet.item input[type="checkbox"]:after,
+label.checkbox > input[type="checkbox"],
+.dnd5e.sheet.item .details select {
+    color: var(--luxury-ui-light-text);
+    background: var(--luxury-ui-tag-background-color);
+    border: var(--luxury-ui-tag-border);
+    border-radius: 5px;
+}
+
+.dnd5e.sheet .sheet-header .summary,
+.dnd5e.sheet .sheet-header .header-details .summary select {
+    color: var(--luxury-ui-light-secondary-text);
+}
+
+.dnd5e.sheet .sheet-header .header-details {
+    height: 100px;
+}
+
+.dnd5e.sheet .sheet-header h1 {
+    border-bottom: none;
+    height: 40px;
+    padding: 0;
+    margin: 5px
+}
+
+.dnd5e.sheet .sheet-header h1 input {
+    height: 100%;
+}
+
+/*.dnd5e.sheet.item .sheet-header .item-subtitle {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    margin: 0;
+    padding: 5px;
+    text-align: left;
+    white-space: nowrap;
+    color: var(--dnd5e-color-tan);
+}*/
+
+.dnd5e.sheet .sheet-header .summary {
+    height: 40px;
+    padding: 0 5px;
+}
+
+.dnd5e.sheet.item .sheet-header .item-subtitle .item-type {
+    flex-grow: 0;
+}
+
+.prosemirror {
+    box-shadow: 3px 3px 6px var(--luxury-ui-shadow-45);
+}
+
+.prosemirror menu .pm-dropdown {
+    background: none;
+}
+
+.prosemirror menu {
+    background: var(--luxury-ui-primary-gradient);
+    border-radius: 5px 5px 0 0;
+}
+
+.prosemirror .editor-container {
+    background: var(--luxury-ui-paragraph-background);
+    margin: 0;
+    padding: 0.5rem;
+    border-radius: 0 0 5px 5px;
+}
+
+.prosemirror .editor-container p {
+    margin: 0.5rem;
+}
+
+/* ----------------------------------------- */
+/* Advancements
+/* ----------------------------------------- */
 
 .dnd5e .items-list .item-list {
     background: var(--luxury-ui-paragraph-background);
@@ -178,7 +306,10 @@ form .form-group, form .form-group-stacked {
     border-color: var(--luxury-ui-tag-border-color);
 }
 
-/* chat */
+/* ----------------------------------------- */
+/* Result messages
+/* ----------------------------------------- */
+
 li.hit .title {
     color: var(--luxury-ui-success-text-color);
 }
@@ -195,7 +326,10 @@ li.miss .title {
     color: var(--luxury-ui-fail-text-color);
 }
 
-/* character sheet 2 */
+/* ----------------------------------------- */
+/* Character Sheet
+/* ----------------------------------------- */
+
 .dnd5e-theme-dark .dnd5e2.sheet .card .header,
 .dnd5e2.dnd5e-theme-dark.sheet .card .header {
     background: linear-gradient(to right, var(--dnd5e-color-hd-1), var(--dnd5e-color-hd-2));
@@ -204,4 +338,16 @@ li.miss .title {
 .dnd5e-theme-dark .dnd5e2.sheet.actor.character .window-content::before,
 .dnd5e2.sheet.actor.character.dnd5e-theme-dark .window-content::before {
     filter: var(--luxury-ui-filter);
+}
+
+/* ----------------------------------------- */
+/* Tooltip
+/* ----------------------------------------- */
+
+:is(#tooltip, .locked-tooltip).dnd5e-tooltip {
+    color: var(--luxury-ui-light-text);
+    border-radius: 5px;
+    background: var(--luxury-ui-background);
+    box-shadow: 0 0 16px var(--luxury-ui-shadow-45);
+    border: 2px solid var(--luxury-ui-secondary);
 }

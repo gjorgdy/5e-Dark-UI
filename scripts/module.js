@@ -1,11 +1,14 @@
 import {filter} from "./lib/hueRotate.js";
 
 const originalColor = '#7c2c2f';
-const primaryColor = '#5e288c';
-const primaryColorShade = '#361750';
+const primaryColor = '#286e8c';
+const primaryColorShade = '#173a50';
 const secondaryColor = '#c7c4cc';
 const secondaryColorShade = '#444345';
-const selectColor = '#7938ae';
+const selectColor = '#3881ae';
+
+let navHidden = true;
+let hotbarHidden = false;
 
 Hooks.once('init', async function () {
     CONFIG.debug.hooks = true;
@@ -48,20 +51,40 @@ Hooks.on('renderHotbar', async function (application, html, data) {
     '                           <i class="fas fa-caret-down"></i>\n' +
     '                         </a></div>');
     const hotbar = $('#hotbar');
+    await updateHotbar();
     hotbar.append(barHandle);
 
-    barHandle.on('click', function () {
-        if (hotbar.hasClass('down')) {
-            hotbar.removeClass('down');
-        } else {
-            hotbar.addClass('down');
-        }
+    barHandle.on('click', async function () {
+        hotbarHidden = !hotbarHidden;
+        await updateHotbar();
     })
 });
 
+async function updateHotbar() {
+    const hotbar = $('#hotbar');
+    if (hotbarHidden) {
+        hotbar.addClass('down');
+    } else {
+        hotbar.removeClass('down');
+    }
+}
 
 // change the tabs to be labels like the character sheets
 Hooks.on('renderItemSheet5e', async function (application, html, data) {
+
+    const documentLink = $('.document-id-link');
+    documentLink.addClass('header-button');
+    documentLink.insertAfter($('.window-title'));
+
+    const itemType = $('.item-subtitle .item-type');
+    const itemTypeText = itemType.contents().filter(function() {
+        return this.nodeType === Node.TEXT_NODE; // Filter text nodes
+    });
+    const itemTypeList = $('<li></li>')
+    itemTypeList.append(itemTypeText);
+    $('.header-details .summary').prepend(itemTypeList);
+    $('.item-subtitle').remove();
+
     const tabs = html.find('.sheet-navigation');
     const content = html.find('.window-content');
     tabs.insertAfter(content);
@@ -96,37 +119,37 @@ Hooks.on('renderItemSheet5e', async function (application, html, data) {
 
 })
 
-Hooks.on('renderSceneControls', function (application, html, data) {
-    console.log('got goofy buttons')
-    console.log(html);
-
+Hooks.on('renderSceneControls', async function (application, html, data) {
+    // construct nav button
     let maps = $('' +
         '<li id="nav-toggle" class="scene-control" data-control="maps" data-canvas-layer="tokens" aria-label="Token Controls" role="tab" aria-controls="tools-panel-maps" data-tooltip="SCENES.ToggleNav">\n' +
         '            <i class="fas fa-map-location"></i>\n' +
         '        </li>');
     html.find('.main-controls').append(maps);
+    await updateNavMenu();
+    // add event to button
     maps.on('click', async function (event) {
-        console.log(game.scenes);
-        // render ui
-        let buttons = {};
-        // add action
-        for (let scene of game.scenes) {
-            buttons[scene.id] = {
-                label: scene.name,
-                callback: function () {
-                    scene.activate();
-                },
-                icon: '<i class="fas fa-times"></i>'
-            };
-        }
-        // create dialog
-        new Dialog({
-            title: "Navigate",
-            content: '',
-            buttons: buttons
-        }).render(true);
+        navHidden = !navHidden;
+        await updateNavMenu()
     });
 })
+
+Hooks.on('renderSceneNavigation', async function (application, html, data) {
+    await updateNavMenu();
+})
+
+
+async function updateNavMenu() {
+    let navMenu = $('#navigation');
+    let navButton = $('#nav-toggle');
+    if (navHidden) {
+        navMenu.addClass('hide');
+        navButton.removeClass('selected')
+    } else {
+        navMenu.removeClass('hide');
+        navButton.addClass('selected')
+    }
+}
 
 function removeText(filter) {
     const elements = $(filter);
